@@ -12,8 +12,6 @@ Resources:
         ZipFile: |
           def handler(event, context):
               return {"statusCode":200,"body":'{"message":"hello"}'}
-      FunctionUrlConfig:
-        AuthType: NONE
 
   HelloFnRole:
     Type: AWS::IAM::Role
@@ -27,6 +25,20 @@ Resources:
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
 
+  HelloFnUrl:
+    Type: AWS::Lambda::Url
+    Properties:
+      TargetFunctionArn: !Ref HelloFn
+      AuthType: NONE
+
+  HelloFnUrlPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref HelloFn
+      Action: lambda:InvokeFunctionUrl
+      Principal: "*"
+      FunctionUrlAuthType: NONE
+
 Outputs:
   URL:
-    Value: !GetAtt HelloFn.FunctionUrl
+    Value: !GetAtt HelloFnUrl.FunctionUrl
