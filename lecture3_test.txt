@@ -19,3 +19,27 @@ curl -X POST https://y2sqwneouqwf4tefpw3jzfufzu0srpwe.lambda-url.us-east-1.on.aw
         "action": "get",
         "body": { "id": "uuid" }
       }'
+
+<update>
+curl -X POST https://y2sqwneouqwf4tefpw3jzfufzu0srpwe.lambda-url.us-east-1.on.aws/ \
+  -H "Content-Type: application/json" \
+  -d '{
+        "action": "update",
+        "body": {
+          "id": "80379efb-164b-48c9-afc6-9bcb4024cbac",
+          "title": "Animal Farm",
+          "author": "George Orwell",
+          "year": 1945
+        }
+      }'
+
+
+<delete>
+curl -X POST https://y2sqwneouqwf4tefpw3jzfufzu0srpwe.lambda-url.us-east-1.on.aws/ \
+  -H "Content-Type: application/json" \
+  -d '{
+        "action": "delete",
+        "body": {
+          "id": "80379efb-164b-48c9-afc6-9bcb4024cbac"
+        }
+      }'
