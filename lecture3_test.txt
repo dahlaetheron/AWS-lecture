@@ -1,8 +1,21 @@
-1. invoke url - enter your own api Gateway id and region name!
-https://9pq3f371f8.execute-api.us-east-1.amazonaws.com
-2. create a book (POST)
-curl -X POST https://9pq3f371f8.execute-api.us-east-1.amazonaws.com/books \
+<create>
+curl -X POST https://y2sqwneouqwf4tefpw3jzfufzu0srpwe.lambda-url.us-east-1.on.aws/ \
   -H "Content-Type: application/json" \
-  -d '{"action":"create","id":"1","title":"AWS in Action"}'
-3. get a book (GET)
-curl https://9pq3f371f8.execute-api.us-east-1.amazonaws.com/books/1
+  -d '{
+        "action": "create",
+        "body": {
+          "title": "1984",
+          "author": "George Orwell",
+          "year": 1949
+        }
+      }'
+
+
+
+<get>
+curl -X POST https://y2sqwneouqwf4tefpw3jzfufzu0srpwe.lambda-url.us-east-1.on.aws/ \
+  -H "Content-Type: application/json" \
+  -d '{
+        "action": "get",
+        "body": { "id": "uuid" }
+      }'
