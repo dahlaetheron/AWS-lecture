@@ -26,7 +26,7 @@ curl -X POST https://y2sqwneouqwf4tefpw3jzfufzu0srpwe.lambda-url.us-east-1.on.aw
   -d '{
         "action": "update",
         "body": {
-          "id": "80379efb-164b-48c9-afc6-9bcb4024cbac",
+          "id": "1fe2ab48-f749-48ab-9024-e6768db91e98",
           "title": "Animal Farm",
           "author": "George Orwell",
           "year": 1945
@@ -40,6 +40,6 @@ curl -X POST https://y2sqwneouqwf4tefpw3jzfufzu0srpwe.lambda-url.us-east-1.on.aw
   -d '{
         "action": "delete",
         "body": {
-          "id": "80379efb-164b-48c9-afc6-9bcb4024cbac"
+          "id": "1fe2ab48-f749-48ab-9024-e6768db91e98"
         }
       }'
